@@ -35,7 +35,7 @@ class SocketWrapper:
         return str(data, encoding='utf-8')
 
     def send_msg(self, msg):
-        print("Msg :" + msg)
+        # print("Msg :" + msg)
         data = bytes(msg, encoding='utf-8')
         self.sock.sendall(data)
 
