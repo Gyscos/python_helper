@@ -1,7 +1,7 @@
 import network.socket_wrapper
 import json
 
-def get_answer(addr, method, params = None):
+def get_answer(addr, method, params = None, get_error = False):
     if params is None:
         params = []
 
@@ -16,6 +16,9 @@ def get_answer(addr, method, params = None):
         result = answer['result']
     else:
         result = None
+
+    if not get_error:
+        return result
 
     if 'error' in answer:
         error = answer['error']
